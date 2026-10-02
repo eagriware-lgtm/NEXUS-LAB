@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXUS LAB — Inventor's Laboratory</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><span class="orb">N</span><div><strong>NEXUS LAB</strong><small>Inventor's Laboratory</small></div></div>
+    <div class="status"><span id="runDot"></span><span id="statusText">READY</span></div>
+    <div class="actions"><button id="clearBtn">Clear</button><button id="runBtn" class="primary">▶ RUN</button></div>
+  </header>
+  <main class="layout">
+    <aside class="toolbox">
+      <div class="section-title">COMPONENTS</div>
+      <div id="components" class="component-list"></div>
+      <div class="tip">Drag or tap a component to place it in the lab.</div>
+    </aside>
+    <section class="lab-wrap">
+      <div class="lab-head"><div><span class="eyebrow">EXPERIMENT 001</span><h1>Build your machine</h1></div><div class="counter"><b id="partCount">0</b> parts</div></div>
+      <div id="lab" class="lab" aria-label="Nexus laboratory workspace">
+        <div class="grid"></div>
+        <div class="lab-message" id="labMessage">Place components here, connect them, then press RUN.</div>
+      </div>
+      <div class="connection-panel">
+        <div><span class="eyebrow">CONNECTIONS</span><strong id="connectionText">No connections yet</strong></div>
+        <button id="connectBtn">Connect selected</button>
+      </div>
+    </section>
+    <aside class="inspector">
+      <div class="section-title">INSPECTOR</div>
+      <div id="inspectorEmpty" class="empty">Select a component to inspect it.</div>
+      <div id="inspectorBody" hidden>
+        <div class="selected-icon" id="selectedIcon">⚙️</div>
+        <h2 id="selectedName">Component</h2>
+        <p id="selectedDesc"></p>
+        <label>Component ID<input id="selectedId" disabled></label>
+        <button id="deleteBtn" class="danger">Delete component</button>
+      </div>
+      <div class="system-card"><span>LAB CORE</span><b>ONLINE</b><small>Local simulation • no external data</small></div>
+    </aside>
+  </main>
+  <footer><span>⚡ NEXUS ENGINE v0.1</span><span id="eventText">System initialized.</span></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
